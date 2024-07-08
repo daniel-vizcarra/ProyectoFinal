@@ -1,0 +1,24 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AtticaMAUI"
+             x:Class="AtticaMAUI.MainPage">
+
+    <StackLayout>
+        <ListView x:Name="ObrasListView" ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Padding="10">
+                            <Image Source="{Binding ImagenUrl}" HeightRequest="100" />
+                            <Label Text="{Binding Titulo}" FontSize="20" />
+                            <Label Text="{Binding Descripcion}" FontSize="14" />
+                            <Label Text="{Binding Precio, StringFormat='Precio: {0:C}'}" FontSize="14" />
+                            <Label Text="{Binding Artista.Nombre}" FontSize="14" TextColor="Gray" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
